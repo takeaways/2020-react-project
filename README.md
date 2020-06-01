@@ -20,3 +20,29 @@ Do something with react
 # npm i -D eslint
 # npx eslint --init 
 ``` 
+5. createElement 함수 만들어 보기
+```javascript
+(() => {
+	'use strict';
+
+	function _createElement(tag, ...children) {
+		const element = document.createElement(tag);
+		children.forEach(child => {
+			element.appendChild(child);
+		});
+		return element;
+	}
+
+	document.querySelector("#app")
+	.appendChild(
+		_createElement('div',
+			_createElement("p",
+				document.createTextNode("Hello world1"),
+				document.createTextNode("Hello world2"),
+				document.createTextNode("Hello world3"),
+			)
+		)
+	);
+
+})();
+```
