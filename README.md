@@ -14,4 +14,9 @@ Do something with react
   }
 }
 ```
-3. index.html 파일 만들고 main.js 연결, src/index.js 파일 생성 및 
+3. index.html 파일 만들고 main.js 연결, src/index.js 파일 생성
+4. eslint 설치하기
+```bash
+# npm i -D eslint
+# npx eslint --init 
+``` 
