@@ -1,24 +1,38 @@
-(() => {
-	'use strict';
+'use strict';
 
-	function _createElement(tag, ...children) {
+/* @jsx createElement */
+//createElement 를 사용하도록 변경처리된다.
+(() => {
+
+	function createElement(tag, props = {}, ...children) {
 		const element = document.createElement(tag);
+		Object.entries(props || {}).forEach(([key, value]) => {
+			element[key.toLowerCase()] = value;
+		});
+
 		children.forEach(child => {
-			element.appendChild(child);
+			if (child instanceof Node) {
+				element.appendChild(child);
+				return;
+			}
+			element.appendChild(document.createTextNode(child));
 		});
 		return element;
 	}
 
-	document.querySelector("#app")
-	.appendChild(
-		_createElement('div',
-			_createElement("p",
-				...[1,2,3].map(i=> document.createTextNode(`Hello Number : ${i}`)),
-				document.createTextNode("Hello world1"),
-				document.createTextNode("Hello world2"),
-				document.createTextNode("Hello world3"),
-			)
-		)
+	function handleClick(){
+		alert("Hello Click")
+	}
+
+	const element = (
+		<div id="hello" className={"greeting"}>
+			<p>Hello world</p>
+			<p>
+				<button onClick={handleClick}>Click Me!</button>
+			</p>
+		</div>
 	);
+
+	document.querySelector("#app").appendChild(element);
 
 })();

@@ -47,3 +47,40 @@ Do something with react
 
 })();
 ```
+
+6. Babel 사용해보기 
+- DSL (Domain Specific Language)
+- 최신의 javascript 코드를 구버전의 자바스크립트로 변경하는 것이 가능하다.
+```bash
+# npm install -D babel-loader //webpack에서 babel을 사용할 수 있도록 처리 할 수 있게 도와줌.
+# npn install -D @babel/core
+# npm install -D @babel/preset-env @babel/preset-react
+```
+- webpack.config.js 파일 설정해주기
+```javascript
+module.exports = {
+	module: {
+		rules: [
+			{
+				test: /\.jsx?$/g,
+				exclude: /node_modules/,
+				use: 'babel-loader'
+			}
+		]
+	}
+};
+```
+- babel.config.js 파일 설정해주기
+```javascript
+module.exports = {
+	presets: [
+		['@babel/preset-env', {
+			targets: {
+				node: 'current'
+			}
+		}],
+		'@babel/preset-react'
+
+	]
+}
+```
