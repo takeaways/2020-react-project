@@ -6,7 +6,7 @@
 
 	function createElement(tag, props = {}, ...children) {
 		const element = document.createElement(tag);
-		Object.entries(props || {}).forEach(([key, value]) => {
+		Object.entries(props || {}).forEach(([key, valuenpm]) => {
 			element[key.toLowerCase()] = value;
 		});
 
@@ -20,27 +20,25 @@
 		return element;
 	}
 
-	let count = 0;
-
 	function handleClick() {
-		count++;
-		render();
+
+		const target = document.querySelector("#count");
+		const countText = target.textContent;
+		let countNumber = parseInt(countText, 10);
+		countNumber++;
+		target.textContent = countNumber.toString();
+		// render();
+
 	}
 
-	function handleClickNumber(number) {
-		count = number;
-		render();
-	}
 
 	function render() {
 		const element = (
-			<div id="hello" className={"greeting"}>
-				<p>Hello world</p> ({count})
+			<div id="hello" className="greeting">
+				<p>Count:</p>
+				<span id="count">0</span>
 				<p>
-					<button onClick={handleClick}>Click Me! {count}</button>
-				</p>
-				<p>
-					{[1,2,3].map(n => <button onClick={()=>handleClickNumber(n)}>{n}</button>)}
+					<button onClick={() => handleClick()}>Click Me!</button>
 				</p>
 			</div>
 		);
