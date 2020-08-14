@@ -1,4 +1,4 @@
-# 2020-react-roject
+# 2020-react-project
 
 Do something with react
 
