@@ -6,7 +6,7 @@ Do something with react
 
 - https://joshua1988.github.io/webpack-guide/guide.html
 
-1. webpack-dev-server 설치하기
+1. webpack-dev-server설치하기
 
 ```bash
 # npm i -D webpack webpack-cli webpack-dev-server
