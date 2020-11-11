@@ -2,7 +2,7 @@
 
 Do something with react.
 
-# 개발환경 셋팅하기
+# 개발환경 셋팅
 
 - https://joshua1988.github.io/webpack-guide/guide.html
 
