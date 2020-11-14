@@ -91,7 +91,7 @@ module.exports = {
 };
 ```
 
-- babel.config.js 파일 설정해주기
+- babel.config.js 파일 설정
 
 ```javascript
 module.exports = {
