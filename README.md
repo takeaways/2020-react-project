@@ -1,6 +1,6 @@
 # 2020-react-project
 
-Do something with react.\
+Do something with react.
 
 # 개발환경 셋팅
 
