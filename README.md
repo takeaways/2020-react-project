@@ -30,7 +30,7 @@ Do something with react.
 # npx eslint --init
 ```
 
-5. createElement 함수 만들어 보기
+5. createElement 함수 만들어 보기.
 
 ```javascript
 (() => {
