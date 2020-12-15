@@ -12,7 +12,7 @@ Do something with react.
 # npm i -D webpack webpack-cli webpack-dev-server
 ```
 
-2. package.json 에서 webpack-dev-server 셋팅하기.
+2. package.json 에서 webpack-dev-server 셋팅하기
 
 ```json
 {
